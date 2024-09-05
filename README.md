@@ -1,10 +1,8 @@
  # Introduction
 
- Créé par Benoît Mandelbrot en 1974 à partir de la racine latine fractus, qui signifie
-"brisé" , "irrégulier", une figure fractale est un objet mathématique, telle une courbe ou
-une surface, dont la structure est invariante quelque soit le changement d’échelle.
+Created by Benoît Mandelbrot in 1974 from the Latin root fractus, meaning “broken” or “irregular”, a fractal figure is a mathematical object such as a curve or a line. “irregular”, a fractal figure is a mathematical object, such as a curve or a surfacesurface, whose structure is invariant to any change of scale.
 
- De nombreux phénomènes naturels – comme l’aspect du chou romanesco – possèdent
-des formes fractales approximatives
+Many natural phenomena - such as the appearance of cabbage - possess
+approximate fractal shapes.
 
 ![fractal](https://news.uoregon.edu/sites/default/files/styles/landscape_xl/public/field/image/nature_fractals_shutterstock.jpg?itok=746XE42l)
