@@ -6,3 +6,10 @@ Many natural phenomena - such as the appearance of cabbage - possess
 approximate fractal shapes.
 
 ![fractal](https://news.uoregon.edu/sites/default/files/styles/landscape_xl/public/field/image/nature_fractals_shutterstock.jpg?itok=746XE42l)
+
+# Goal
+
+This new project will give you the opportunity to start using MiniLibX,
+discover or use the mathematical notion of complex numbers, tackle the problem of
+optimization in graphics programming, as well as event management.
+events.
