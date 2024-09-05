@@ -9,7 +9,5 @@ approximate fractal shapes.
 
 # Goal
 
-This new project will give you the opportunity to start using MiniLibX,
-discover or use the mathematical notion of complex numbers, tackle the problem of
-optimization in graphics programming, as well as event management.
+This project will give you the opportunity to start using MiniLibX,discover or use the mathematical notion of complex numbers, tackle the problem of optimization in graphics programming, as well as event management.
 events.
