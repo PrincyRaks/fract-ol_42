@@ -1,7 +1,9 @@
 CFLAGS= -Wall -Werror -Wextra -g
 MLX_FLAGS= -lXext -lX11 -lm
 
-SRCS= ./mandatory/main.c
+SRCS= 	./mandatory/main.c \
+		./mandatory/check_arg.c \
+		./mandatory/frame.c 
 
 OBJS= $(SRCS:.c=.o)
 
