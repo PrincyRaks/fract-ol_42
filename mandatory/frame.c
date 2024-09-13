@@ -6,7 +6,7 @@
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:49:43 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/12 15:27:12 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/13 15:53:46 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ void	init_frame(t_frame *frame, char *name)
 	frame->img.img_ptr = mlx_new_image(frame->mlx, WIN_WIDTH, WIN_HEIGHT);
 	if (frame->img.img_ptr == NULL)
 	{
-		mlx_destroy_window(frame->mlx_win);
-		mlx_destroy_display(frame->mlx);
+		mlx_destroy_window(frame->mlx,frame->mlx_win);
+		// mlx_destroy_display(frame->mlx);
 		free(frame->mlx);
 		print_error("Error to initialize image");
 	}
-	frame->img = mlx_get_data_addr(frame->img.img_ptr,
+	frame->img.img_ptr = mlx_get_data_addr(frame->img.img_ptr,
 			&frame->img.bits_per_pixel, &frame->img.line_length,
 			&frame->img.endian);
 }

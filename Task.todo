@@ -1,5 +1,12 @@
-☐ Prise en main librairie Minilibx
-☐ C'est quoi fractal ?
-    ☐ Mandlebrot
-    ☐ Julia
-☐ Documentation librairie man man 3 math de C
+✔ Prise en main librairie Minilibx @done(24-09-13 16:11)
+✔ C'est quoi fractal ? @done(24-09-13 16:12)
+    ✔ Mandlebrot @done(24-09-13 16:12)
+    ✔ Julia @done(24-09-13 16:12)
+✔ Documentation librairie man man 3 math de C @done(24-09-13 16:12)
+
+Coding fractal :
+    ☐ check argument if mandlebrot or julia and the numbers are real (x and y)
+    ☐ convert number char* to double
+    ☐ draw mandlebrot :
+        ☐ create function to calculate mandlebrot
+    ☐ Same things for julia

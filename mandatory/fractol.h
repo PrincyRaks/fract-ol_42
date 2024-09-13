@@ -6,7 +6,7 @@
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 10:44:58 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/12 16:04:10 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/13 17:13:01 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,19 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define ERROR_ARG "Please enter \n\t\"./fractol mandlebrot\" or\n\t\" ./fractol julia <number_1> <number_2>\" \n"
+# define ERROR_ARG "Please enter: \n\t\"./fractol mandlebrot\" or \n\t\"./fractol julia <number_1> <number_2>\" \n"
 # define WIN_WIDTH 800
 # define WIN_HEIGHT 800
+# define MAX_ITER 50
+
+# define PSYCHEDELIC_PURPLE 0x9C00FF
+# define PSYCHEDELIC_YELLOW 0xFFFF00
+# define PSYCHEDELIC_GREEN 0x00FF00
+# define PSYCHEDELIC_RED 0xFF0000
+# define PSYCHEDELIC_CYAN 0x00FFFF
+# define PSYCHEDELIC_ORANGE 0xFFA500
+# define PSYCHEDELIC_PINK 0xFF00FF
+# define PSYCHEDELIC_BLUE 0x0000FF
 
 typedef struct s_img
 {
@@ -47,5 +57,4 @@ typedef struct s_point
 }			t_point;
 void		print_error(char *s);
 void		init_frame(t_frame *frame, char *name);
-
 #endif
