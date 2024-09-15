@@ -18,13 +18,40 @@ void    print_error(char *s)
     exit(1);
 }
 
-// int is_realnumber(char *str)
-// {
-//     int i;
+int is_doubledigit(char *str)
+{
+    int j;
 
-//     i = 0;
-//     while (str[i])
-//     {
-//         if (ft_strchr(str, "."))
-//     }
-// }
+    j = 0;
+    if (*str == '+' || *str == '-')
+        str++;
+    while (*str || *str == '.')
+    {
+        if (*str != '.' && !ft_isdigit(*str))
+            return (0);
+        if (*str == '.')
+            j++;
+        if (j > 1)
+            return (0);
+        str++;
+    }
+    return (1);
+}
+
+double  ft_atof(char *str)
+{
+    char    **num_s;
+    double  result;
+    int     neg;
+
+    neg = 1;
+    num_s = ft_split(str, '.');
+    result = (double)ft_atoi(num_s[0]);
+    if (result < 0)
+    {
+        result = -result;        
+        neg = -1;
+    }
+    result += (double)(ft_atoi(num_s[1]) / pow(10, ft_strlen(num_s[1])));
+    return (result * neg);
+}

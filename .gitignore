@@ -2,6 +2,6 @@
 minilibx-linux/
 minilibx/
 a.out
-*.0
+*.o
 *.a
 fractol

@@ -24,16 +24,17 @@
 # define ERROR_ARG "Please enter: \n\t\"./fractol mandlebrot\" or \n\t\"./fractol julia <number_1> <number_2>\" \n"
 # define WIN_WIDTH 800
 # define WIN_HEIGHT 800
-# define MAX_ITER 50
+# define MAX_ITER 42
 
-# define PSYCHEDELIC_PURPLE 0x9C00FF
-# define PSYCHEDELIC_YELLOW 0xFFFF00
-# define PSYCHEDELIC_GREEN 0x00FF00
-# define PSYCHEDELIC_RED 0xFF0000
-# define PSYCHEDELIC_CYAN 0x00FFFF
-# define PSYCHEDELIC_ORANGE 0xFFA500
-# define PSYCHEDELIC_PINK 0xFF00FF
-# define PSYCHEDELIC_BLUE 0x0000FF
+# define BLACK 0x000000
+# define WHITE 0xFFFFFF
+# define PURPLE 0x9C00FF
+# define YELLOW 0xFFFF00
+# define GREEN 0x00FF00
+# define RED 0xFF0000
+# define CYAN 0x00FFFF
+# define ORANGE 0xFFA500
+# define BLUE 0x0000FF
 
 typedef struct s_img
 {
@@ -57,4 +58,5 @@ typedef struct s_point
 }			t_point;
 void		print_error(char *s);
 void		init_frame(t_frame *frame, char *name);
+void		draw_fractal(t_frame *frame);
 #endif

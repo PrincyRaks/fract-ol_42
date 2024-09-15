@@ -3,7 +3,8 @@ MLX_FLAGS= -lXext -lX11 -lm
 
 SRCS= 	./mandatory/main.c \
 		./mandatory/check_arg.c \
-		./mandatory/frame.c 
+		./mandatory/frame.c \
+		./mandatory/utils.c
 
 OBJS= $(SRCS:.c=.o)
 
