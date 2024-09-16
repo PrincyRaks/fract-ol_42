@@ -6,78 +6,65 @@
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 15:59:05 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/13 17:18:52 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/16 16:31:44 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static double	scale(double unscaled_num, double new_min, double new_max, double old_min, double old_max)
+double	scale(double unscaled, t_frame *frame, double old_min, double old_max)
 {
-	return ((new_max - new_min) * (unscaled_num - old_min) / (old_max - old_min) + new_min);
+	return ((frame->new_max - frame->new_min) * (unscaled - old_min) / (old_max
+			- old_min) + frame->new_min);
 }
 
-static void	ft_putpixel(t_img *img, int x, int y, int color)
+void	ft_putpixel(t_img *img, int x, int y, int color)
 {
 	char	*pixel;
 
-	if ((x >= 0 && x < WIN_WIDTH && y >= 0 && y < WIN_HEIGHT) && (img != NULL && img->img_ptr != NULL))
+	if ((x >= 0 && x < WIN_WIDTH && y >= 0 && y < WIN_HEIGHT) && (img != NULL
+			&& img->pixel_ptr != NULL))
 	{
-		pixel = img->img_ptr + (y * img->line_length + x
+		pixel = img->pixel_ptr + (y * img->line_length + x
 				* (img->bits_per_pixel / 8));
-		*(unsigned int*)pixel = color;
+		*(unsigned int *)pixel = color;
 	}
 }
 
-static void	draw_mandlebrot(int x, int y, t_frame *frame)
+double	smooth_color(int i, t_point z)
 {
-	t_point	z;
-	t_point	c;
-	int		i;
-    double	tmp_x;
-
-	i = 0;
-	z.x = 0.0;
-	z.y = 0.0;
-	c.x = scale(x, -2, 2, 0, WIN_WIDTH);
-	c.y = scale(y, 2, -2, 0, WIN_HEIGHT);
-	while (i < MAX_ITER && ((z.x * z.x) + (z.y *z.y)) < 4.)
-	{
-        tmp_x = ((z.x * z.x) - (z.y * z.y)) + c.x;
-        z.y = (2. * z.x * z.y) + c.y;
-        z.x = tmp_x;
-        i++;
-	}
-    if (i == MAX_ITER)
-		ft_putpixel(&frame->img, x, y, 0x000000);
-    else
-        ft_putpixel(&frame->img, x, y, 0xFCBE11 * i);
+	return ((i + 1) - (log(log(sqrt(z.x * z.x + z.y *z.y)))) / log(2.));
 }
 
-void	draw_fractal(t_frame *frame)
+int	get_color(double smooth)
 {
-	int	x_win;
-	int	y_win;
+	int r;
+	int	g;
+	int	b;
 
-	x_win = 0;
-	while (x_win <  WIN_WIDTH)
+	r = (int)(smooth * 0x0E5CEB) % 256;
+	g = (int)(smooth * 0x998966) % 256;
+	b = (int)(smooth * 0xEBA50E) % 256;
+	return (r << 16 | g << 8 | b);
+}
+
+void	draw_fractal(double real, double imaginary, t_frame *frame)
+{
+	frame->x_win = 0;
+	while (frame->x_win < WIN_WIDTH)
 	{
-		y_win = 0;
-		while (y_win < WIN_HEIGHT)
+		frame->y_win = 0;
+		while (frame->y_win < WIN_HEIGHT)
 		{
-            draw_mandlebrot(x_win, y_win, frame);
-			// if (frame->name == "mandlebrot")
-				// function mandlebrot
-			// else if (frame->name == "julia")
-				// function julia
+			if (!ft_strncmp(frame->name, "mandlebrot", 10))
+				draw_mandlebrot(frame);
+			else if (!ft_strncmp(frame->name, "julia", 5))
+				draw_julia(real, imaginary, frame);
 			// else if () bonus 1
-			y_win++;
+			frame->y_win++;
 		}
-		x_win++;
+		frame->x_win++;
 	}
-    mlx_put_image_to_window(frame->mlx, frame->mlx_win, frame->img.img_ptr, 0, 0);
+	mlx_put_image_to_window(frame->mlx, frame->mlx_win, frame->img.img_ptr, 0,
+		0);
 }
-
-// void	draw_julia(void)
-// {
-// }

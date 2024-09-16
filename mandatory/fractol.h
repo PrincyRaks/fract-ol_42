@@ -6,7 +6,7 @@
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 10:44:58 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/13 17:13:01 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/16 16:19:43 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,6 @@
 # define BLACK 0x000000
 # define WHITE 0xFFFFFF
 # define PURPLE 0x9C00FF
-# define YELLOW 0xFFFF00
-# define GREEN 0x00FF00
-# define RED 0xFF0000
-# define CYAN 0x00FFFF
 # define ORANGE 0xFFA500
 # define BLUE 0x0000FF
 
@@ -44,19 +40,32 @@ typedef struct s_img
 	int		line_length;
 	int		endian;
 }			t_img;
+typedef struct s_point
+{
+	double	x;
+	double	y;
+}			t_point;
 typedef struct s_frame
 {
 	void	*mlx;
 	void	*mlx_win;
 	t_img	img;
 	char	*name;
+	int		x_win;
+	int		y_win;
+	double	new_min;
+	double	new_max;
 }			t_frame;
-typedef struct s_point
-{
-	double	x;
-	double	y;
-}			t_point;
 void		print_error(char *s);
 void		init_frame(t_frame *frame, char *name);
-void		draw_fractal(t_frame *frame);
+void		draw_fractal(double real, double imaginary, t_frame *frame);
+void		draw_mandlebrot(t_frame *frame);
+void		ft_putpixel(t_img *img, int x, int y, int color);
+double		scale(double unscaled, t_frame *frame, double old_min,
+				double old_max);
+void		draw_julia(double x, double y, t_frame *frame);
+int			is_doubledigit(char *str);
+double		ft_atof(char *str);
+int			get_color(double smooth);
+double		smooth_color(int iter, t_point z);
 #endif

@@ -6,7 +6,7 @@
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:49:48 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/13 16:11:44 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/16 15:22:33 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int is_doubledigit(char *str)
 
 double  ft_atof(char *str)
 {
+    if (!str)
+        return (0.);
     char    **num_s;
     double  result;
     int     neg;
