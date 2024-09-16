@@ -6,7 +6,7 @@
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 15:59:05 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/16 16:31:44 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/16 17:19:03 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_putpixel(t_img *img, int x, int y, int color)
 
 double	smooth_color(int i, t_point z)
 {
-	return ((i + 1) - (log(log(sqrt(z.x * z.x + z.y *z.y)))) / log(2.));
+	return ((i + 1) - log2(log((z.x * z.x + z.y *z.y)) / 2.));
 }
 
 int	get_color(double smooth)
@@ -42,9 +42,9 @@ int	get_color(double smooth)
 	int	g;
 	int	b;
 
-	r = (int)(smooth * 0x0E5CEB) % 256;
-	g = (int)(smooth * 0x998966) % 256;
-	b = (int)(smooth * 0xEBA50E) % 256;
+	r = (int)(smooth * 9) % 256;
+	g = (int)(smooth * 5) % 256;
+	b = (int)(smooth * 3) % 256;
 	return (r << 16 | g << 8 | b);
 }
 

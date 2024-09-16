@@ -6,7 +6,7 @@
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 14:06:11 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/16 16:29:14 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/16 17:02:00 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,5 @@ void    draw_julia(double real, double imaginary, t_frame *frame)
 	if (i == MAX_ITER)
 		ft_putpixel(&frame->img, frame->x_win, frame->y_win, BLACK);
 	else
-		ft_putpixel(&frame->img, frame->x_win, frame->y_win, ORANGE * i);
+		ft_putpixel(&frame->img, frame->x_win, frame->y_win, ORANGE * (i % 255));
 }

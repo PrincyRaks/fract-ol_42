@@ -6,7 +6,7 @@
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:49:48 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/16 15:22:33 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/16 17:00:28 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,21 @@ int is_doubledigit(char *str)
     return (1);
 }
 
+static int count_tab(char **tab)
+{
+    int i;
+
+    if (tab == NULL)
+        return (0);
+    i = 0;
+    while (*tab != NULL)
+    {
+        i++;
+        tab++;
+    }
+    return (i);
+}
+
 double  ft_atof(char *str)
 {
     if (!str)
@@ -51,9 +66,11 @@ double  ft_atof(char *str)
     result = (double)ft_atoi(num_s[0]);
     if (result < 0)
     {
-        result = -result;        
+        result = -result;   
         neg = -1;
     }
+    if (count_tab(num_s) < 2)
+        return (result * neg);
     result += (double)(ft_atoi(num_s[1]) / pow(10, ft_strlen(num_s[1])));
     return (result * neg);
 }
