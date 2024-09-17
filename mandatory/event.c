@@ -12,10 +12,20 @@
 
 #include "fractol.h"
 
+static void close_window(t_frame *frame)
+{
+    mlx_destroy_image(frame->mlx, frame->img.img_ptr);
+    mlx_destroy_window(frame->mlx,frame->mlx_win);
+    mlx_destroy_display(frame->mlx);
+    free(frame->mlx);
+    exit(0);
+}
+
 static int  key_handler(int keycode, t_frame *frame)
 {
-    (void)frame;
-    printf("%d\n", keycode);
+    if (keycode == XK_Escape)
+        close_window(frame);
+    else if ();
     return (0);
 }
 
@@ -32,5 +42,5 @@ void    init_event(t_frame *frame)
     mlx_key_hook(frame->mlx_win, key_handler, frame);
     // mlx_hook(frame->mlx_win, MotionNotify, PointerMotionMask, mouse_handler, frame);
     mlx_hook(frame->mlx_win, ButtonPress, ButtonPressMask, mouse_handler, frame);
-;    // mlx_hook(frame->mlx_win, DestroyNotify, StructureNotifyMask, close_window, frame);
+    // mlx_hook(frame->mlx_win, DestroyNotify, StructureNotifyMask, close_window, frame);
 }

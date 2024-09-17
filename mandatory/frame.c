@@ -32,6 +32,7 @@ void	init_frame(t_frame *frame, char *name)
 	if (frame->img.img_ptr == NULL)
 	{
 		mlx_destroy_window(frame->mlx,frame->mlx_win);
+		mlx_destroy_display(frame->mlx);
 		free(frame->mlx);
 		print_error("Error to initialize image\n");
 	}

@@ -70,6 +70,5 @@ int			is_doubledigit(char *str);
 double		ft_atof(char *str);
 int			get_color(double smooth);
 double		smooth_color(int iter, t_point z);
-
-void    init_event(t_frame *frame);
+void		init_event(t_frame *frame);
 #endif

@@ -20,8 +20,8 @@ void	draw_mandelbrot(t_frame *frame)
 	double	tmp_x;
 
 	i = 0;
-	frame->new_max = -2;
-	frame->new_min = 2;
+	// frame->new_max = -2;
+	// frame->new_min = 2;
 	z.x = 0.0;
 	z.y = 0.0;
 	c.x = scale(frame->x_win, 2, -2, 0, WIN_WIDTH);
@@ -47,8 +47,8 @@ void    draw_julia(double real, double imaginary, t_frame *frame)
 	double	tmp_x;
 
 	i = 0;
-	frame->new_max = -2;
-	frame->new_min = 2;
+	// frame->new_max = -2;
+	// frame->new_min = 2;
 	z.x = scale(frame->x_win, 2, -2, 0, WIN_WIDTH);
 	z.y = scale(frame->y_win, -2, 2, 0, WIN_HEIGHT);
 	c.x = real;
