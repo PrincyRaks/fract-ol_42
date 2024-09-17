@@ -6,16 +6,23 @@
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 15:59:05 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/16 17:19:03 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/17 16:12:18 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-double	scale(double unscaled, t_frame *frame, double old_min, double old_max)
+// double	scale(double unscaled, t_frame *frame, double old_min,
+		// double old_max)
+// {
+// 	return ((frame->new_max - frame->new_min) * (unscaled - old_min) / (old_max
+// 			- old_min) + frame->new_min);
+// }
+
+double	scale(double unscaled, double new_max, double new_min, double old_min, double old_max)
 {
-	return ((frame->new_max - frame->new_min) * (unscaled - old_min) / (old_max
-			- old_min) + frame->new_min);
+	return ((new_max - new_min) * (unscaled - old_min) / (old_max - old_min)
+		+ new_min);
 }
 
 void	ft_putpixel(t_img *img, int x, int y, int color)
@@ -33,18 +40,18 @@ void	ft_putpixel(t_img *img, int x, int y, int color)
 
 double	smooth_color(int i, t_point z)
 {
-	return ((i + 1) - log2(log((z.x * z.x + z.y *z.y)) / 2.));
+	return ((i + 1) - log2(log((z.x * z.x + z.y * z.y)) / 2.));
 }
 
 int	get_color(double smooth)
 {
-	int r;
+	int	r;
 	int	g;
 	int	b;
 
-	r = (int)(smooth * 9) % 256;
-	g = (int)(smooth * 5) % 256;
-	b = (int)(smooth * 3) % 256;
+	r = (int)(smooth * 9) % 255;
+	g = (int)(smooth * 5) % 255;
+	b = (int)(smooth * 3) % 255;
 	return (r << 16 | g << 8 | b);
 }
 
@@ -56,8 +63,8 @@ void	draw_fractal(double real, double imaginary, t_frame *frame)
 		frame->y_win = 0;
 		while (frame->y_win < WIN_HEIGHT)
 		{
-			if (!ft_strncmp(frame->name, "mandlebrot", 10))
-				draw_mandlebrot(frame);
+			if (!ft_strncmp(frame->name, "mandelbrot", 10))
+				draw_mandelbrot(frame);
 			else if (!ft_strncmp(frame->name, "julia", 5))
 				draw_julia(real, imaginary, frame);
 			// else if () bonus 1

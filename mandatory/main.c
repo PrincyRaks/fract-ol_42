@@ -4,7 +4,7 @@ int	main(int argc, char **argv)
 {
 	t_frame	frame;
 
-	if ((argc == 2 && !ft_strncmp(argv[1], "mandlebrot", 10)) || ((argc == 4
+	if ((argc == 2 && !ft_strncmp(argv[1], "mandelbrot", 10)) || ((argc == 4
 				&& !ft_strncmp(argv[1], "julia", 5)) && (is_doubledigit(argv[2])
 				&& is_doubledigit(argv[3]))))
 	{

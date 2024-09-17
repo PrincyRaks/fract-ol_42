@@ -6,7 +6,7 @@
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 10:44:58 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/16 16:19:43 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/17 16:12:18 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@
 # include "../libft/libft.h"
 # include "../minilibx/mlx.h"
 # include <X11/keysym.h>
+# include <X11/X.h>
 # include <math.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
-# define ERROR_ARG "Please enter: \n\t\"./fractol mandlebrot\" or \n\t\"./fractol julia <number_1> <number_2>\" \n"
+# define ERROR_ARG "Please enter: \n\t\"./fractol mandelbrot\" or \n\t\"./fractol julia <number_1> <number_2>\" \n"
 # define WIN_WIDTH 800
 # define WIN_HEIGHT 800
 # define MAX_ITER 42
@@ -59,13 +60,16 @@ typedef struct s_frame
 void		print_error(char *s);
 void		init_frame(t_frame *frame, char *name);
 void		draw_fractal(double real, double imaginary, t_frame *frame);
-void		draw_mandlebrot(t_frame *frame);
+void		draw_mandelbrot(t_frame *frame);
 void		ft_putpixel(t_img *img, int x, int y, int color);
-double		scale(double unscaled, t_frame *frame, double old_min,
-				double old_max);
+// double		scale(double unscaled, t_frame *frame, double old_min,
+// 				double old_max);
+double	scale(double unscaled, double new_max, double new_min, double old_min, double old_max);
 void		draw_julia(double x, double y, t_frame *frame);
 int			is_doubledigit(char *str);
 double		ft_atof(char *str);
 int			get_color(double smooth);
 double		smooth_color(int iter, t_point z);
+
+void    init_event(t_frame *frame);
 #endif

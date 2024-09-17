@@ -5,7 +5,8 @@ SRCS= 	./mandatory/main.c \
 		./mandatory/check_arg.c \
 		./mandatory/frame.c \
 		./mandatory/utils.c \
-		./mandatory/draw.c
+		./mandatory/draw.c \
+		./mandatory/event.c
 
 OBJS= $(SRCS:.c=.o)
 
