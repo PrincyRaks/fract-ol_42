@@ -12,6 +12,7 @@ Coding fractal :
     ✔ Same things for julia @done(24-09-18 15:43)
     ✔ close window (with keybord and button close) @done(24-09-18 15:48)
     ☐ zoom button mouse
+    ☐ check all options with julia
 Bonus:
         ☐ Snowflake Koch 
         ☐ zoom approach in cursor
