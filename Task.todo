@@ -5,8 +5,15 @@
 ✔ Documentation librairie man man 3 math de C @done(24-09-13 16:12)
 
 Coding fractal :
-    ☐ check argument if mandelbrot or julia and the numbers are real (x and y)
-    ☐ convert number char* to double
-    ☐ draw mandelbrot :
-        ☐ create function to calculate mandelbrot
-    ☐ Same things for julia
+    ✔ check argument if mandelbrot or julia and the numbers are real (x and y) @done(24-09-18 15:43)
+    ✔ convert number char* to double @done(24-09-18 15:43)
+    ✔ draw mandelbrot : @done(24-09-18 15:43)
+        ✔ create function to calculate mandelbrot @done(24-09-18 15:43)
+    ✔ Same things for julia @done(24-09-18 15:43)
+    ✔ close window (with keybord and button close) @done(24-09-18 15:48)
+    ☐ zoom button mouse
+Bonus:
+        ☐ Snowflake Koch 
+        ☐ zoom approach in cursor
+        ✔ color psychedelic with keybord R/G/B; @done(24-09-18 15:49)
+        ✔ shift position of fractale @done(24-09-18 15:56)

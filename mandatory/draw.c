@@ -6,7 +6,7 @@
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 14:06:11 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/17 16:12:18 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/18 15:32:18 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,19 @@ void	draw_mandelbrot(t_frame *frame)
 	// frame->new_min = 2;
 	z.x = 0.0;
 	z.y = 0.0;
-	c.x = scale(frame->x_win, 2, -2, 0, WIN_WIDTH);
-	c.y = scale(frame->y_win, -2, 2, 0, WIN_HEIGHT);
-	while (i < MAX_ITER && ((z.x * z.x) + (z.y * z.y)) < 4.)
+	c.x = scale(frame->x_win, 2, -2, 0, WIN_WIDTH) + frame->move_x;
+	c.y = scale(frame->y_win, -2, 2, 0, WIN_HEIGHT) + frame->move_y;
+	while (i < frame->max_iteration && ((z.x * z.x) + (z.y * z.y)) < 4.)
 	{
 		tmp_x = ((z.x * z.x) - (z.y * z.y)) + c.x;
 		z.y = (2. * z.x * z.y) + c.y;
 		z.x = tmp_x;
 		i++;
 	}
-	if (i == MAX_ITER)
+	if (i == frame->max_iteration)
 		ft_putpixel(&frame->img, frame->x_win, frame->y_win, BLACK);
 	else
-		ft_putpixel(&frame->img, frame->x_win, frame->y_win, get_color(smooth_color(i, z)));
+		ft_putpixel(&frame->img, frame->x_win, frame->y_win, get_color(i, z, frame));
 }
 
 void    draw_julia(double real, double imaginary, t_frame *frame)
@@ -53,15 +53,15 @@ void    draw_julia(double real, double imaginary, t_frame *frame)
 	z.y = scale(frame->y_win, -2, 2, 0, WIN_HEIGHT);
 	c.x = real;
 	c.y = imaginary;
-	while (i < MAX_ITER && ((z.x * z.x) + (z.y * z.y)) < 4.)
+	while (i < frame->max_iteration && ((z.x * z.x) + (z.y * z.y)) < 4.)
 	{
 		tmp_x = ((z.x * z.x) - (z.y * z.y)) + c.x;
 		z.y = (2. * z.x * z.y) + c.y;
 		z.x = tmp_x;
 		i++;
 	}
-	if (i == MAX_ITER)
-		ft_putpixel(&frame->img, frame->x_win, frame->y_win, BLACK);
+	if (i == frame->max_iteration)
+		ft_putpixel(&frame->img, frame->x_win, frame->y_win,  BLACK);
 	else
-		ft_putpixel(&frame->img, frame->x_win, frame->y_win, get_color(smooth_color(i, z)));
+		ft_putpixel(&frame->img, frame->x_win, frame->y_win, BLUE *(i % 256));
 }

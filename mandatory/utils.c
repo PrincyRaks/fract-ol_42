@@ -6,7 +6,7 @@
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 15:59:05 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/17 16:12:18 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/18 15:30:30 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,24 +38,21 @@ void	ft_putpixel(t_img *img, int x, int y, int color)
 	}
 }
 
-double	smooth_color(int i, t_point z)
+int	get_color(int i, t_point z, t_frame *frame)
 {
-	return ((i + 1) - log2(log((z.x * z.x + z.y * z.y)) / 2.));
-}
+	int		r;
+	int		g;
+	int		b;
+	double	smooth;
 
-int	get_color(double smooth)
-{
-	int	r;
-	int	g;
-	int	b;
-
-	r = (int)(smooth * 9) % 255;
-	g = (int)(smooth * 5) % 255;
-	b = (int)(smooth * 3) % 255;
+	smooth = (i + 1) - log2(log((z.x * z.x + z.y * z.y)) / 2.);
+	r = (int)(smooth * frame->r) % 256;
+	g = (int)(smooth * frame->g) % 256;
+	b = (int)(smooth * frame->b) % 256;
 	return (r << 16 | g << 8 | b);
 }
 
-void	draw_fractal(double real, double imaginary, t_frame *frame)
+void	draw_fractal(t_frame *frame)
 {
 	frame->x_win = 0;
 	while (frame->x_win < WIN_WIDTH)
@@ -66,7 +63,7 @@ void	draw_fractal(double real, double imaginary, t_frame *frame)
 			if (!ft_strncmp(frame->name, "mandelbrot", 10))
 				draw_mandelbrot(frame);
 			else if (!ft_strncmp(frame->name, "julia", 5))
-				draw_julia(real, imaginary, frame);
+				draw_julia(frame->real, frame->imaginary, frame);
 			// else if () bonus 1
 			frame->y_win++;
 		}

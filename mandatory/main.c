@@ -4,15 +4,21 @@ int	main(int argc, char **argv)
 {
 	t_frame	frame;
 
+	frame.real = 0.;
+	frame.imaginary = 0.;
 	if ((argc == 2 && !ft_strncmp(argv[1], "mandelbrot", 10)) || ((argc == 4
 				&& !ft_strncmp(argv[1], "julia", 5)) && (is_doubledigit(argv[2])
 				&& is_doubledigit(argv[3]))))
 	{
 		init_frame(&frame, argv[1]);
 		if (argc == 4)
-			draw_fractal(ft_atof(argv[2]), ft_atof(argv[3]), &frame);
+		{
+			frame.real = ft_atof(argv[2]);
+			frame.imaginary = ft_atof(argv[3]);
+			draw_fractal(&frame);
+		}
 		else
-			draw_fractal(0., 0., &frame);
+			draw_fractal(&frame);
 		mlx_loop(frame.mlx);
 	}
 	else

@@ -6,7 +6,7 @@
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:49:48 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/16 17:00:28 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/18 15:00:08 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ double  ft_atof(char *str)
     result = (double)ft_atoi(num_s[0]);
     if (result < 0)
     {
-        result = -result;   
+        result = -result;
         neg = -1;
     }
     if (count_tab(num_s) < 2)
