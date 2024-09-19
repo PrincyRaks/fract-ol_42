@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   frame.c                                            :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:49:43 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/18 16:20:24 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/19 15:23:40 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static void	init_image(t_frame *frame)
+void	init_image(t_frame *frame)
 {
 	if (!frame)
 		return ;
@@ -34,14 +34,17 @@ static void	init_value(t_frame *frame, char *name)
 	if (!frame)
 		return ;
 	frame->name = name;
-	frame->max_iteration = 42;
+	frame->max_iteration = 500;
 	frame->move_x = 0.;
 	frame->move_y = 0.;
-	frame->r = 15;
-	frame->g = 22;
-	frame->b = 10;
-	frame->zoom_in = 0.;
-	frame->zoom_out = 0.;
+	frame->zoom = 1.;
+}
+
+void	init_color(t_frame *frame, int r, int g, int b)
+{
+	frame->r = (int)fabs((double)r) % 256;
+	frame->g = (int)fabs((double)g) % 256;
+	frame->b = (int)fabs((double)b) % 256;
 }
 
 void	init_frame(t_frame *frame, char *name)

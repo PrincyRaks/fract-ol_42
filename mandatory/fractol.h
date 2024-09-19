@@ -6,7 +6,7 @@
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 10:44:58 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/18 16:17:00 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/19 15:24:47 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ typedef struct s_frame
 {
 	void	*mlx;
 	void	*mlx_win;
+
 	t_img	img;
 	int		max_iteration;
 	char	*name;
@@ -63,8 +64,7 @@ typedef struct s_frame
 	int		b;
 	double	scale_min;
 	double	scale_max;
-	double	zoom_in;
-	double	zoom_out;
+	double	zoom;
 }			t_frame;
 void		print_error(char *s);
 void		init_frame(t_frame *frame, char *name);
@@ -78,6 +78,9 @@ double		scale(double unscaled, double new_max, double new_min,
 void		draw_julia(double x, double y, t_frame *frame);
 int			is_doubledigit(char *str);
 double		ft_atof(char *str);
-int	get_color(int i, t_point z, t_frame *frame);
+int			get_color(int i, t_point z, t_frame *frame);
 void		init_event(t_frame *frame);
+void		repaint(t_frame *frame);
+void		init_image(t_frame *frame);
+void		init_color(t_frame *frame, int r, int g, int b);
 #endif

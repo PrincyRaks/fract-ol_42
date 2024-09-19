@@ -11,14 +11,14 @@ int	main(int argc, char **argv)
 				&& is_doubledigit(argv[3]))))
 	{
 		init_frame(&frame, argv[1]);
+		init_color(&frame, 15, 22, 10);
 		if (argc == 4)
 		{
 			frame.real = ft_atof(argv[2]);
 			frame.imaginary = ft_atof(argv[3]);
-			draw_fractal(&frame);
+			init_color(&frame, 2, 2, 5);
 		}
-		else
-			draw_fractal(&frame);
+		draw_fractal(&frame);
 		mlx_loop(frame.mlx);
 	}
 	else

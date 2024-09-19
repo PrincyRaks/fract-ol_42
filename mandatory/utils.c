@@ -6,20 +6,21 @@
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 15:59:05 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/18 15:30:30 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/19 15:24:07 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
 // double	scale(double unscaled, t_frame *frame, double old_min,
-		// double old_max)
+// double old_max)
 // {
 // 	return ((frame->new_max - frame->new_min) * (unscaled - old_min) / (old_max
 // 			- old_min) + frame->new_min);
 // }
 
-double	scale(double unscaled, double new_max, double new_min, double old_min, double old_max)
+double	scale(double unscaled, double new_max, double new_min, double old_min,
+		double old_max)
 {
 	return ((new_max - new_min) * (unscaled - old_min) / (old_max - old_min)
 		+ new_min);
@@ -52,23 +53,11 @@ int	get_color(int i, t_point z, t_frame *frame)
 	return (r << 16 | g << 8 | b);
 }
 
-void	draw_fractal(t_frame *frame)
+void	repaint(t_frame *frame)
 {
-	frame->x_win = 0;
-	while (frame->x_win < WIN_WIDTH)
-	{
-		frame->y_win = 0;
-		while (frame->y_win < WIN_HEIGHT)
-		{
-			if (!ft_strncmp(frame->name, "mandelbrot", 10))
-				draw_mandelbrot(frame);
-			else if (!ft_strncmp(frame->name, "julia", 5))
-				draw_julia(frame->real, frame->imaginary, frame);
-			// else if () bonus 1
-			frame->y_win++;
-		}
-		frame->x_win++;
-	}
-	mlx_put_image_to_window(frame->mlx, frame->mlx_win, frame->img.img_ptr, 0,
-		0);
+	if (!frame)
+		return ;
+	mlx_destroy_image(frame->mlx, frame->img.img_ptr);
+	init_image(frame);
+	draw_fractal(frame);
 }

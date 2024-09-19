@@ -1,9 +1,9 @@
-CFLAGS= -Wall -Werror -Wextra -g
+CFLAGS= -Wall -Werror -Wextra -g -o2
 MLX_FLAGS= -lXext -lX11 -lm
 
 SRCS= 	./mandatory/main.c \
 		./mandatory/check_arg.c \
-		./mandatory/frame.c \
+		./mandatory/init.c \
 		./mandatory/utils.c \
 		./mandatory/draw.c \
 		./mandatory/event.c
