@@ -6,7 +6,7 @@
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 15:14:02 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/19 15:17:26 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/19 16:09:11 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,10 @@ static int  mouse_handler(int button, int x, int y, t_frame *frame)
 
 // static int motion_handler(int x, int y, t_frame *frame)
 // {
+// 	if (!frame)
+// 		return ;
+// 	if (ft_strncmp(frame->name, "julia", 5))
+// 		return (0);
 //     frame->real = scale(x, 2, -2, 0, WIN_WIDTH);
 //     frame->imaginary = scale(y, -2, 2, 0,WIN_HEIGHT);
 // 	repaint(frame);

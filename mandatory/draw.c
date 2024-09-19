@@ -6,7 +6,7 @@
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 14:06:11 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/19 15:24:14 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/19 16:22:10 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,3 +92,5 @@ void	draw_fractal(t_frame *frame)
 	mlx_put_image_to_window(frame->mlx, frame->mlx_win, frame->img.img_ptr, 0,
 		0);
 }
+
+void	draw_snowflake(){}

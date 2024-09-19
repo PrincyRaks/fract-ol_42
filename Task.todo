@@ -12,10 +12,10 @@ Coding fractal :
     ✔ Same things for julia @done(24-09-18 15:43)
     ✔ close window (with keybord and button close) @done(24-09-18 15:48)
     ✔ zoom button mouse @done(24-09-19 11:41)
-    ☐ check all options with julia
-    ☐ Ajust Julia :
-        ☐ moving julia
-        ☐ set color (2, 2, 5)
+    ✔ check all options with julia @done(24-09-19 15:55)
+    ✔ Ajust Julia : @done(24-09-19 15:54)
+        ✔ moving julia @done(24-09-19 15:54)
+        ✔ set color (2, 2, 5) @done(24-09-19 15:54)
         ✔ max iteration > 500 @done(24-09-19 14:23)
 Bonus:
         ☐ Snowflake Koch 
