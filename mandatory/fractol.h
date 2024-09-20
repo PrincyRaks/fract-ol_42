@@ -6,7 +6,7 @@
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 10:44:58 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/19 15:24:47 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/20 11:34:46 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define ERROR_ARG "Please enter: \n\t\"./fractol mandelbrot\" or \n\t\"./fractol julia <number_1> <number_2>\" \n"
+# define ERROR_ARG "Please enter: \n\t\"./fractol mandelbrot\" \n\t\"./fractol julia <real> <imaginary>\" \n\t\"./fractol snowflake\" \n"
 # define WIN_WIDTH 800
 # define WIN_HEIGHT 800
 
@@ -73,8 +73,7 @@ void		draw_mandelbrot(t_frame *frame);
 void		ft_putpixel(t_img *img, int x, int y, int color);
 // double		scale(double unscaled, t_frame *frame, double old_min,
 // 				double old_max);
-double		scale(double unscaled, double new_max, double new_min,
-				double old_min, double old_max);
+double	scale(double unscaled, double new_max, double new_min, double old_max);
 void		draw_julia(double x, double y, t_frame *frame);
 int			is_doubledigit(char *str);
 double		ft_atof(char *str);
@@ -83,4 +82,5 @@ void		init_event(t_frame *frame);
 void		repaint(t_frame *frame);
 void		init_image(t_frame *frame);
 void		init_color(t_frame *frame, int r, int g, int b);
+void		free_tab(char **str, int len);
 #endif

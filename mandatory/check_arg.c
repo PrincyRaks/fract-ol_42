@@ -6,7 +6,7 @@
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:49:48 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/19 15:24:34 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/20 11:27:01 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,20 +57,24 @@ double	ft_atof(char *str)
 {
 	char	**num_s;
 	double	result;
-	int		neg;
+	double	neg;
+	int		len_tab;
 
 	if (!str)
 		return (0.);
-	neg = 1;
+	neg = 1.;
 	num_s = ft_split(str, '.');
+	if (!num_s)
+		return (0.);
 	result = (double)ft_atoi(num_s[0]);
 	if (*(num_s[0]) == '-')
 	{
 		result = -result;
-		neg = -1;
+		neg = -1.;
 	}
-	if (count_tab(num_s) < 2)
-		return (result * neg);
-	result += (double)(ft_atoi(num_s[1]) / pow(10, ft_strlen(num_s[1])));
+	len_tab = count_tab(num_s);
+	if (len_tab == 2)
+		result += (double)(ft_atoi(num_s[1]) / pow(10, ft_strlen(num_s[1])));
+	free_tab(num_s, len_tab);
 	return (result * neg);
 }

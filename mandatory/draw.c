@@ -6,7 +6,7 @@
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 14:06:11 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/19 16:22:10 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/20 17:18:34 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void	draw_mandelbrot(t_frame *frame)
 	// frame->new_min = 2;
 	z.x = 0.0;
 	z.y = 0.0;
-	c.x = scale(frame->x_win, 2, -2, 0, WIN_WIDTH) * frame->zoom
+	c.x = scale(frame->x_win, 2, -2, WIN_WIDTH) * frame->zoom
 		+ frame->move_x;
-	c.y = scale(frame->y_win, -2, 2, 0, WIN_HEIGHT) * frame->zoom
+	c.y = scale(frame->y_win, -2, 2, WIN_HEIGHT) * frame->zoom
 		+ frame->move_y;
 	while (i < frame->max_iteration && ((z.x * z.x) + (z.y * z.y)) < 4.)
 	{
@@ -52,9 +52,9 @@ void	draw_julia(double real, double imaginary, t_frame *frame)
 	i = 0;
 	// frame->new_max = -2;
 	// frame->new_min = 2;
-	z.x = scale(frame->x_win, 2, -2, 0, WIN_WIDTH) * frame->zoom
+	z.x = scale(frame->x_win, 2, -2, WIN_WIDTH) * frame->zoom
 		+ frame->move_x;
-	z.y = scale(frame->y_win, -2, 2, 0, WIN_HEIGHT) * frame->zoom
+	z.y = scale(frame->y_win, -2, 2, WIN_HEIGHT) * frame->zoom
 		+ frame->move_y;
 	c.x = real;
 	c.y = imaginary;
@@ -72,6 +72,22 @@ void	draw_julia(double real, double imaginary, t_frame *frame)
 				frame));
 }
 
+// void	koch_segment(){}
+
+// void	draw_snowflake(t_frame *frame)
+// {
+// 	t_point p1;
+// 	t_point p2;
+// 	t_point p3;
+
+// 	p1.x = WIN_WIDTH / 2;
+// 	p1.y = 100;
+// 	p2.x = 200;
+// 	p2.y = 500;
+// 	p3.x = 600;
+// 	p3.y = 500;
+// }
+
 void	draw_fractal(t_frame *frame)
 {
 	frame->x_win = 0;
@@ -84,7 +100,8 @@ void	draw_fractal(t_frame *frame)
 				draw_mandelbrot(frame);
 			else if (!ft_strncmp(frame->name, "julia", 5))
 				draw_julia(frame->real, frame->imaginary, frame);
-			// else if () bonus 1
+			else if (!ft_strncmp(frame->name, "snowflake", 9))
+				draw_snowflake();
 			frame->y_win++;
 		}
 		frame->x_win++;
@@ -93,4 +110,12 @@ void	draw_fractal(t_frame *frame)
 		0);
 }
 
-void	draw_snowflake(){}
+void	repaint(t_frame *frame)
+
+{
+	if (!frame)
+		return ;
+	mlx_destroy_image(frame->mlx, frame->img.img_ptr);
+	init_image(frame);
+	draw_fractal(frame);
+}

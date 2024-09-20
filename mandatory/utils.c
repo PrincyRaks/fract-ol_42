@@ -6,7 +6,7 @@
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 15:59:05 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/19 15:24:07 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/20 11:34:27 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,9 @@
 // 			- old_min) + frame->new_min);
 // }
 
-double	scale(double unscaled, double new_max, double new_min, double old_min,
-		double old_max)
+double	scale(double unscaled, double new_max, double new_min, double old_max)
 {
-	return ((new_max - new_min) * (unscaled - old_min) / (old_max - old_min)
-		+ new_min);
+	return ((new_max - new_min) * (unscaled - 0) / (old_max - 0) + new_min);
 }
 
 void	ft_putpixel(t_img *img, int x, int y, int color)
@@ -53,11 +51,12 @@ int	get_color(int i, t_point z, t_frame *frame)
 	return (r << 16 | g << 8 | b);
 }
 
-void	repaint(t_frame *frame)
+void	free_tab(char **str, int len)
 {
-	if (!frame)
-		return ;
-	mlx_destroy_image(frame->mlx, frame->img.img_ptr);
-	init_image(frame);
-	draw_fractal(frame);
+	int	i;
+
+	i = -1;
+	while (++i < len)
+		free(str[i]);
+	free(str);
 }

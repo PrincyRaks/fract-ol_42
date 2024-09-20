@@ -6,7 +6,7 @@
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:49:43 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/19 15:52:09 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/20 11:36:22 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	init_value(t_frame *frame, char *name)
 	if (!frame)
 		return ;
 	frame->name = name;
-	frame->max_iteration = 500;
+	frame->max_iteration = 42;
 	frame->move_x = 0.;
 	frame->move_y = 0.;
 	frame->zoom = 1.;
