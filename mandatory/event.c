@@ -69,7 +69,7 @@ static int  mouse_handler(int button, int x, int y, t_frame *frame)
 // static int motion_handler(int x, int y, t_frame *frame)
 // {
 // 	if (!frame)
-// 		return ;
+// 		return (0);
 // 	if (ft_strncmp(frame->name, "julia", 5))
 // 		return (0);
 //     frame->real = scale(x, 2, -2, WIN_WIDTH);

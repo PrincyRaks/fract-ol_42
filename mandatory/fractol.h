@@ -83,4 +83,6 @@ void		repaint(t_frame *frame);
 void		init_image(t_frame *frame);
 void		init_color(t_frame *frame, int r, int g, int b);
 void		free_tab(char **str, int len);
+void	draw_snowflake(t_frame *frame);
+void	koch_segment(t_frame *frame, t_point p1, t_point p2, int i);
 #endif
