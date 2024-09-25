@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   fractol_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 10:44:58 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/25 15:01:06 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/25 16:23:09 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#ifndef FRACTOL_BONUS_H
+# define FRACTOL_BONUS_H
 
 # include "../libft/libft.h"
 # include "../minilibx/mlx.h"
@@ -25,8 +25,9 @@
 	"\033[32mPlease enter:\033[30m \
 	\n\t\033[35mreal:\033[30m decimal (eg: ±0.4) \
 	\n\t\033[35mimaginary:\033[30m decimal (eg: ±0.4) \
-	\n\t\033[34m\"./fractol mandelbrot\" \
-	\n\t\"./fractol julia \033[35m<real> <imaginary>\033[34m\"\033[30m\n"
+	\n\t\033[34m\"./fractol_bonus mandelbrot\" \
+	\n\t\"./fractol_bonus julia \033[35m<real> <imaginary>\033[34m\" \
+	\n\t\"./fractol_bonus multicorn\"\n\033[30m"
 # define WIN_WIDTH 800
 # define WIN_HEIGHT 800
 
@@ -70,8 +71,8 @@ typedef struct s_frame
 	double	zoom;
 }			t_frame;
 void		print_error(char *s);
-int			is_doubledigit(char *str);
 int			compare_str(const char *s1, const char *s2, size_t n2, size_t n1);
+int			is_doubledigit(char *str);
 int			get_color(int i, t_point z, t_frame *frame);
 void		init_frame(t_frame *frame, char *name);
 void		init_event(t_frame *frame);

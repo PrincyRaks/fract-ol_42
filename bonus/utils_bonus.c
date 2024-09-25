@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 15:59:05 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/25 10:50:26 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/25 11:06:02 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "fractol_bonus.h"
 
 int	compare_str(const char *s1, const char *s2, size_t n2, size_t n1)
 {

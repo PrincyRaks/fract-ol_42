@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   event.c                                            :+:      :+:    :+:   */
+/*   event_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 15:14:02 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/25 11:48:22 by rrakotos         ###   ########.fr       */
+/*   Created: 2024/09/23 19:06:56 by rrakotos          #+#    #+#             */
+/*   Updated: 2024/09/23 22:22:03 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "fractol_bonus.h"
 
 static int	close_window(t_frame *frame)
 {
@@ -42,6 +42,12 @@ static int	key_handler(int keycode, t_frame *frame)
 		frame->max_iteration += 10;
 	else if (keycode == 65453)
 		frame->max_iteration -= 10;
+	else if (keycode == 114)
+		frame->r += 10;
+	else if (keycode == 103)
+		frame->g += 10;
+	else if (keycode == 98)
+		frame->b += 10;
 	repaint(frame);
 	return (0);
 }

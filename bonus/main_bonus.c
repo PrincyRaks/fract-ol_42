@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/20 10:43:02 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/25 10:52:36 by rrakotos         ###   ########.fr       */
+/*   Created: 2024/09/23 19:05:15 by rrakotos          #+#    #+#             */
+/*   Updated: 2024/09/25 16:24:10 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "fractol_bonus.h"
 
 int	main(int argc, char **argv)
 {
@@ -19,6 +19,7 @@ int	main(int argc, char **argv)
 	frame.real = 0.;
 	frame.imaginary = 0.;
 	if ((argc == 2 && (!compare_str(argv[1], "mandelbrot", 10,
+					ft_strlen(argv[1])) || !compare_str(argv[1], "multicorn", 9,
 					ft_strlen(argv[1])))) || ((argc == 4
 				&& !compare_str(argv[1], "julia", 5, ft_strlen(argv[1])))
 			&& (is_doubledigit(argv[2]) && is_doubledigit(argv[3]))))

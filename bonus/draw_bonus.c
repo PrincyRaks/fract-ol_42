@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw.c                                             :+:      :+:    :+:   */
+/*   draw_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 14:06:11 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/25 11:19:10 by rrakotos         ###   ########.fr       */
+/*   Created: 2024/09/23 19:05:18 by rrakotos          #+#    #+#             */
+/*   Updated: 2024/09/25 16:23:27 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "fractol_bonus.h"
 
 static void	draw_mandelbrot(t_frame *frame)
 {
@@ -64,6 +64,32 @@ static void	draw_julia(double real, double imaginary, t_frame *frame)
 				frame));
 }
 
+void	draw_multicorn(t_frame *frame)
+{
+	t_point	z;
+	t_point	c;
+	int		i;
+	double	tmp_x;
+
+	i = 0;
+	z.x = 0.0;
+	z.y = 0.0;
+	c.x = scale(frame->x_win, 2, -2, WIN_WIDTH) * frame->zoom + frame->move_x;
+	c.y = scale(frame->y_win, -2, 2, WIN_HEIGHT) * frame->zoom + frame->move_y;
+	while (i < frame->max_iteration && ((z.x * z.x) + (z.y * z.y)) < 4.)
+	{
+		tmp_x = (pow(z.x, 3) - (3. * z.x * pow(z.y, 2))) + c.x;
+		z.y = (-3. * pow(z.x, 2) * z.y + pow(z.y, 3)) + c.y;
+		z.x = tmp_x;
+		i++;
+	}
+	if (i == frame->max_iteration)
+		ft_putpixel(&frame->img, frame->x_win, frame->y_win, BLACK);
+	else
+		ft_putpixel(&frame->img, frame->x_win, frame->y_win, get_color(i, z,
+				frame));
+}
+
 void	draw_fractal(t_frame *frame)
 {
 	frame->x_win = 0;
@@ -72,10 +98,13 @@ void	draw_fractal(t_frame *frame)
 		frame->y_win = 0;
 		while (frame->y_win < WIN_HEIGHT)
 		{
-			if (!ft_strncmp(frame->name, "mandelbrot", 10))
+			if (!ft_strncmp(frame->name, "mandelbrot", ft_strlen(frame->name)))
 				draw_mandelbrot(frame);
-			else if (!ft_strncmp(frame->name, "julia", 8))
+			else if (!ft_strncmp(frame->name, "julia", ft_strlen(frame->name)))
 				draw_julia(frame->real, frame->imaginary, frame);
+			else if (!ft_strncmp(frame->name, "multicorn",
+					ft_strlen(frame->name)))
+				draw_multicorn(frame);
 			frame->y_win++;
 		}
 		frame->x_win++;

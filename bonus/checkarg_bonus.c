@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_arg.c                                        :+:      :+:    :+:   */
+/*   checkarg_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrakotos <rrakotos@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:49:48 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/09/20 11:27:01 by rrakotos         ###   ########.fr       */
+/*   Updated: 2024/09/25 14:54:06 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "fractol_bonus.h"
 
 void	print_error(char *s)
 {
@@ -25,7 +25,9 @@ int	is_doubledigit(char *str)
 	j = 0;
 	if (*str == '+' || *str == '-')
 		str++;
-	while (*str || *str == '.')
+	if (*str == '.')
+		return (0);
+	while (*str)
 	{
 		if (*str != '.' && !ft_isdigit(*str))
 			return (0);

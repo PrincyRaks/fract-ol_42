@@ -18,7 +18,7 @@ Coding fractal :
         ✔ set color (2, 2, 5) @done(24-09-19 15:54)
         ✔ max iteration > 500 @done(24-09-19 14:23)
 Bonus:
-        ☐ Snowflake Koch 
-        ☐ zoom approach in cursor
+        ✔ tricorne @done(24-09-23 15:29)
+        ✘ zoom approach in cursor @cancelled(24-09-23 15:29)
         ✔ color psychedelic with keybord R/G/B; @done(24-09-18 15:49)
         ✔ shift position of fractale @done(24-09-18 15:56)
