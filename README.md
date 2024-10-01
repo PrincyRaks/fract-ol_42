@@ -1,3 +1,5 @@
+![Static Badge](https://img.shields.io/badge/System_Linux-Ubuntu-green) ![Static Badge](https://img.shields.io/badge/Language-C-blue) ![Static Badge](https://img.shields.io/badge/GUI_Library-Minilibx-blue) ![Static Badge](https://img.shields.io/badge/Norminette_V4-done-green)
+
  # Introduction
 
 Created by Benoît Mandelbrot in 1974 from the Latin root fractus, meaning “broken” or “irregular”, a fractal figure is a mathematical object such as a curve or a line. “irregular”, a fractal figure is a mathematical object, such as a curve or a surfacesurface, whose structure is invariant to any change of scale.
