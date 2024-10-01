@@ -11,5 +11,7 @@ approximate fractal shapes.
 
 # Goal
 
-This project will give you the opportunity to start using MiniLibX,discover or use the mathematical notion of complex numbers, tackle the problem of optimization in graphics programming, as well as event management.
-events.
+We're now going to get to grips with the school's graphics library: MiniLibX! This library has been developed in-house and includes basic tools for opening windows, creating images and managing keyboard and mouse events.
+This new project will be an opportunity to start using MiniLibX, to discover or use the mathematical notion of complex numbers, to tackle the issue of optimization in graphics programming, and to learn how to manage events.
+
+![mandelbrot](https://github.com/PrincyRaks/fract-ol/blob/main/screens/Capture%20d'%C3%A9cran%202024-10-01%20212614.png) ![julia1](https://github.com/PrincyRaks/fract-ol/blob/main/screens/Capture%20d'%C3%A9cran%202024-10-01%20212835.png) ![julia2](https://github.com/PrincyRaks/fract-ol/blob/main/screens/Capture%20d'%C3%A9cran%202024-10-01%20212951.png) ![snowflake Koch](https://github.com/PrincyRaks/fract-ol/blob/main/screens/Capture%20d'%C3%A9cran%202024-10-01%20214153.png)
