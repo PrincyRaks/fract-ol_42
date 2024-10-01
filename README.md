@@ -5,7 +5,7 @@ Created by Benoît Mandelbrot in 1974 from the Latin root fractus, meaning “br
 Many natural phenomena - such as the appearance of cabbage - possess
 approximate fractal shapes.
 
-![fractal](https://news.uoregon.edu/sites/default/files/styles/landscape_xl/public/field/image/nature_fractals_shutterstock.jpg?itok=746XE42l)
+![fractal](https://img.chemie.de/Portal/News/661785e1657c4_Sdo5Uwkm0.jpg?tr=w-2793,h-2094,cm-extract,x-0,y-0:n-xzoom)
 
 # Goal
 
