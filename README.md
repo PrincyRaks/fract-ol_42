@@ -1,4 +1,4 @@
-![Static Badge](https://img.shields.io/badge/System_Linux-Ubuntu-green) ![Static Badge](https://img.shields.io/badge/Language-C-blue) ![Static Badge](https://img.shields.io/badge/GUI_Library-Minilibx-blue) ![Static Badge](https://img.shields.io/badge/Norminette_V4-done-green)
+![Static Badge](https://img.shields.io/badge/System_Linux-Ubuntu-green) ![Static Badge](https://img.shields.io/badge/Language-C-blue) ![Static Badge](https://img.shields.io/badge/GUI_library-Minilibx-blue?cacheSeconds=https%3A%2F%2Fharm-smits.github.io%2F42docs%2F) ![Static Badge](https://img.shields.io/badge/Norminette_V4-done-green)
 
  # Introduction
 
