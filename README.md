@@ -19,6 +19,7 @@ This new project will be an opportunity to start using MiniLibX, to discover or 
 # Documentation
 
 For the documentation Library Minilibx [here](https://harm-smits.github.io/42docs/)
+
 The subjects of this project is [here](https://github.com/PrincyRaks/fract-ol/blob/main/fr.subject.pdf)
 
 I didn't finished the last bonus to complete the 125 points (Zoom follows mouse position 🥲. Sorry)
