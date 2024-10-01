@@ -28,5 +28,7 @@ You can test this project if you have compiler C in your device :
 
 - `git@github.com:PrincyRaks/fract-ol.git`
 - open terminal and execute the following commands :
-- - `tar -xf minilibx-linux.tgz`
-- execute this command in your teminal `./push_swap` and add random value integer
+ - `tar -xf minilibx-linux.tgz`
+ - rename the folder minilibx-linux to minilibx
+- execute `make` for mandatory project and `./fractol`, you can watch the differents formats to execute differents fractals
+- `make bonus` for bonus project
