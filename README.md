@@ -29,6 +29,7 @@ You can test this project if you have compiler C in your device :
 
 - `git clone git@github.com:PrincyRaks/fract-ol.git`
 - open terminal and execute the following commands :
+ - `cd fract-ol/`
  - `tar -xf minilibx-linux.tgz`
  - rename the folder **minilibx-linux** to **minilibx**
 - execute `make` for mandatory project and `./fractol`, you can watch the differents formats to execute differents fractals
