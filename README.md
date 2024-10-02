@@ -27,9 +27,9 @@ I didn't finished the last bonus to complete the 125 points (Zoom follows mouse 
 ## Test
 You can test this project if you have compiler C in your device :
 
-- `git@github.com:PrincyRaks/fract-ol.git`
+- `git clone git@github.com:PrincyRaks/fract-ol.git`
 - open terminal and execute the following commands :
  - `tar -xf minilibx-linux.tgz`
- - rename the folder minilibx-linux to minilibx
+ - rename the folder **minilibx-linux** to **minilibx**
 - execute `make` for mandatory project and `./fractol`, you can watch the differents formats to execute differents fractals
-- `make bonus` for bonus project
+- `make bonus` for bonus project and execute `./fractol_bonus`
